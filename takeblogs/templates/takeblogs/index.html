@@ -5,21 +5,18 @@
 </head>
 
 <body>
-    {{ form }}
-    <!-- form追加 -->
-    <h1>記事作成フォーム</h1><br />
-    <form method="POST" action="/cgi-bin/form.py">
-        タイトル<br />
-        <input type="text" size="30" name="name"><br />
-        本文<br />
-        <textarea rows="4" cols="100" name="name"></textarea><br />
-        <!-- rows=高さ -->
-        画像投稿<br />
-        <input type="file" name="file"><br />
-        <br />
-        <button type="submit">記事を登録する</button>
-        <!-- submit=データを飛ばす -->
-    </form>
+    <h1>ようこそtakeblogへ</h1><br />
+
+    <h2>最新の投稿</h2>
+    {% for post in posts.all %}
+        {{ post.title }}
+        <br /><br />
+        {{ post.published }}
+        <br /><br />
+        {{ post.body }}
+        <br /><br />
+    {% endfor %}
+    <!-- djangoでは、{% %}と囲んであげることでpythonの文法がつかえる -->
 </body>
 
 </html>
