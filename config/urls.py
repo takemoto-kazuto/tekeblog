@@ -21,7 +21,7 @@ from django.conf.urls import include, url
 
 urlpatterns = [
     url('admin/', admin.site.urls),
-    url('^takeblogs/', include('takeblogs.urls')),
+    url('takeblogs/', include('takeblogs.urls')),
 ]
     # path('admin/', admin.site.urls),
     # path('^posts/', include('posts.urls')),

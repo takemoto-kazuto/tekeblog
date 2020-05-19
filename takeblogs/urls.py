@@ -4,7 +4,7 @@ from django.conf.urls import url
 from . import views
 #これは、同じディレクトリ階層（"."は同じ階層を表す）の中の
 # views.pyというファイルを読み込みますという宣言である。
-urlpatterns = [url(r'^form$',views.index, name = 'index')]
+urlpatterns = [url(r'test',views.index, name = 'index')]
 #ユーザーが渡してきたurlがアプリ内でどのファイルを読み込むべきかを記します
 #コードの意味としては、r''の部分に記述したurlが渡された時に、
 # viewsファイルの中の、indexというクラスを実行してください
