@@ -9,7 +9,7 @@
 
     <h2>最新の投稿</h2>
     {% for post in takeblogs.all %}
-        {{ post.title }}
+        <a href = "{% url 'post_detail' post.id %}" >{{ post.title }}'</a>
         <br /><br />
         {{ post.published }}
                             <img src={{ post.image.url }} />

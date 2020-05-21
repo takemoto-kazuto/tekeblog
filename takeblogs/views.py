@@ -1,10 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from .models import Post # admin.pyにも入っている
 # Postクラスの変数をviewで利用する宣言
 
 def index(request):
     takeblogs = Post.objects.order_by('-published')
+    # print('print log：',post)
     return render(request, 'takeblogs/index.html',{'takeblogs': takeblogs})
     # order_by＝並び替え　published＝公開・代入
     # htmlに変数を渡すために、render()内に{'posts': posts}と追記
@@ -12,8 +13,9 @@ def index(request):
     # renderメソッドは、request、template_name、contextという3つの引数を取る
 
 def post_detail(request, post_id):
-    post = Post.objects.get(pk=post_id)
-    return render(request, 'takeblogs/post_detail.html', {'post_id': post_id})
+    post = get_object_or_404(Post, pk=post_id)
+    print('print log：',post)
+    return render(request, 'takeblogs/post_detail.html', {'post': post})
 # get(pk=post_id)というのは、primary_keyが
 # post_idに一致する投稿を取ってくる役割
 # Create your views here.

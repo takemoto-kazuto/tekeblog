@@ -27,7 +27,7 @@ from takeblogs import views
 urlpatterns = [
     url('admin/', admin.site.urls),
     url('takeblogs/', include('takeblogs.urls')),
-    url(r'^takeblogs/(?P<post_id>[0-9]+)/$', views.post_detail, name = "post_detail")
+    url(r'takeblogs/(?P<post_id>[0-9]+)/$', views.post_detail, name = "post_detail")
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 # urlpatternsの後ろにstatic()で表示するデータのurlの設定と、
 # そのデータをどこに表示しているかを指定
