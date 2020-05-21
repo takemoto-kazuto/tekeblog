@@ -13,7 +13,7 @@ def index(request):
 
 def post_detail(request, post_id):
     post = Post.objects.get(pk=post_id)
-    return render(request, 'post_detail.html', {'post_id': post_id})
+    return render(request, 'takeblogs/post_detail.html', {'post_id': post_id})
 # get(pk=post_id)というのは、primary_keyが
 # post_idに一致する投稿を取ってくる役割
 # Create your views here.
