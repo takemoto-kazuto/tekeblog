@@ -5,7 +5,7 @@ from .models import Post # admin.pyにも入っている
 
 def index(request):
     takeblogs = Post.objects.order_by('-published')
-    # print('print log：',post)
+    print('print log：',takeblogs)
     return render(request, 'takeblogs/index.html',{'takeblogs': takeblogs})
     # order_by＝並び替え　published＝公開・代入
     # htmlに変数を渡すために、render()内に{'posts': posts}と追記
@@ -13,9 +13,9 @@ def index(request):
     # renderメソッドは、request、template_name、contextという3つの引数を取る
 
 def post_detail(request, post_id):
-    post = get_object_or_404(Post, pk=post_id)
-    print('print log：',post)
-    return render(request, 'takeblogs/post_detail.html', {'post': post})
+    detail = get_object_or_404(Post, pk=post_id)
+    print('print log：',detail)
+    return render(request, 'takeblogs/post_detail.html', {'detail': detail})
 # get(pk=post_id)というのは、primary_keyが
 # post_idに一致する投稿を取ってくる役割
 # Create your views here.
