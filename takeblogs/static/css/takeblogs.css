@@ -1,6 +1,64 @@
-h1 , h2 {
-    color: #C25100; 
+{% load static %}
+h1 {
+  position: relative;
+  padding: 0.25em 1em;
+  border: solid 2px black;
+  border-radius: 3px 0 3px 0;
 }
-/* #aaaa {
-    color: #C25100; 
-} */
+
+h1:before, h1:after {
+  content: '';
+  position: absolute;
+  width:10px;
+  height: 10px;
+  border: solid 2px black;
+  border-radius: 50%;
+}
+
+h1:after {
+  top:-12px;
+  left:-12px;
+}
+h1:before {
+  bottom:-12px;
+  right:-12px;
+}
+
+a {
+    position: relative;
+    padding: 0.5em;
+    background: #a6d3c8;
+    color: white;
+  }
+  
+  a::before {
+    position: absolute;
+    content: '';
+    top: 100%;
+    left: 0;
+    border: none;
+    border-bottom: solid 15px transparent;
+    border-right: solid 20px rgb(149, 158, 155);
+  }
+img.gazou {
+    width: 400px;
+    height: 400px;
+    }
+    
+body{
+      background: rgb(0, 217, 255) ;/*保険用*/
+      background: -moz-linear-gradient(top, gold 0%, orange 100%);/*古いFireFox向け*/
+      background: -webkit-linear-gradient(top, gold 0%,orange 100%);/*古いSafariなど向け*/
+      filter:progid:DXImageTransform.Microsoft.Gradient(
+        startColorstr='gold',
+        endColorstr='orange',
+        GradientType=0 );/*IE9以下向け*/
+      background: linear-gradient(to bottom, rgb(0, 255, 221) 0%, rgb(166, 255, 0) 100%);/*正規の指定*/
+    } 
+
+p="right" 
+
+
+
+    
+    

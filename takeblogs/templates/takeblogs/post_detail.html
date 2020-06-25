@@ -1,7 +1,11 @@
-{{ detail.title }}
-<br />1のページ(仮)<br />
-{{ detail.published }}
+{% load static %}
+<H1>{{ detail.title }}</H1>
+<head>
+    <link rel="stylesheet" href="{% static 'css/post_detail.css' %}"/>
+</head>
 <br /><br />
-<img src="{{ detail.image.url }}" />
+<img src="{{ detail.image.url }}" class="gazou"/>
+<br /><br />
 {{ detail.body }}
 <br /><br />
+{{ detail.published }}

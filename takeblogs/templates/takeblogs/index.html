@@ -1,8 +1,8 @@
 {% load static %}
 <html lang="ja-jp">
     <head>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"> -->
         <link rel="stylesheet" href="{% static 'css/takeblogs.css' %}"/>
         
         <title>投稿一覧</title>
@@ -13,12 +13,15 @@
 
             <h2>最新の投稿</h2>
             {% for post in takeblogs.all %}
-                <a href = "{% url 'post_detail' post.id %}" >{{ post.title }}'</a>
-                <br /><br />
-                {{ post.published }}
-                                    <img src={{ post.image.url }} />
+                <a href = "{% url 'post_detail' post.id %}" >{{ post.title }}</a>
                 <br /><br />
                 {{ post.summary }}
+                <br /><br />
+                <img src={{ post.image.url }} class="gazou"/>
+                <br /><br />
+                <P>{{ post.published }}</P>
+                <br /><br />
+                <br /><br />
                 <br /><br />
             {% endfor %}
             <!-- djangoでは、% %と囲んであげることでpythonの文法がつかえる -->
